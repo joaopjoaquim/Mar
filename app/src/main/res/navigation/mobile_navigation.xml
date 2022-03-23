@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_notifications">
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.univ_amu.myapplication.ui.routeList.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_maps"
+        android:name="com.univ_amu.myapplication.ui.maps.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
+
+    <fragment
+        android:id="@+id/navigation_test"
+        android:name="com.univ_amu.myapplication.ui.placeList.PlaceListFragment"
+        android:label="@string/title_PlaceList"
+        tools:layout="@layout/fragment_place_list" >
+        <action
+            android:id="@+id/action_PlaceListFragment_to_PlaceFragment"
+            app:destination="@id/PlaceFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PlaceFragment"
+        android:name="com.univ_amu.myapplication.ui.placeList.PlaceFragment"
+        android:label="PlaceFragment">
+        <argument
+            android:name="code"
+            app:argType="string" />
+    </fragment>
+</navigation>
